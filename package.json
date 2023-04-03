@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "combiner": "./gpt-prompt-tool.js"
+  },
   "keywords": [
     "chat",
     "gpt",
