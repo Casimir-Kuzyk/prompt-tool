@@ -28,4 +28,6 @@ function combiner(files){
             console.log(`Successfully combined text from ${files.length} files into ${outputFilePath}`);
         };
 
-module.exports = combiner;
+program.parse(process.argv);
+
+module.exports = program;
