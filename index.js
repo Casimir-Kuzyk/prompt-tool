@@ -1,7 +1,7 @@
 const program = require('commander');
 
 program
-    .Command('add <number1> <number2>')
+    .command('add')
     .description('add 2 numbers')
     .action(iswds)
 
