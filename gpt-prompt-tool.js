@@ -22,7 +22,8 @@ function combiner(files){
             }, '');
         
             // Write combined text to output file
-            const outputFilePath = path.resolve(process.cwd(), 'combined-files.txt');
+            //const outputFilePath = path.resolve(process.cwd(), 'combined-files.txt');
+            const outputFilePath = path.resolve(require('os').homedir(), 'Desktop', 'combined-files.txt');
             fs.writeFileSync(outputFilePath, combinedText);
             console.log(`Successfully combined text from ${files.length} files into ${outputFilePath}`);
         };
