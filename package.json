@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Casimir-Kuzyk/prompt-tool/issues"
   },
-  "homepage": "https://github.com/Casimir-Kuzyk/prompt-tool#readme"
+  "homepage": "https://github.com/Casimir-Kuzyk/prompt-tool#readme",
+  "dependencies": {
+    "commander": "^10.0.0"
+  }
 }
