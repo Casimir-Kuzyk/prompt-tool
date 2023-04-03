@@ -1,0 +1,24 @@
+{
+  "name": "gpt-prompt-tool",
+  "version": "1.0.1",
+  "description": "create a txt file with all of the code in a folder for prompting chatgpt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chat",
+    "gpt",
+    "prompt"
+  ],
+  "author": "Casimir Kuzyk",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Casimir-Kuzyk/prompt-tool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Casimir-Kuzyk/prompt-tool/issues"
+  },
+  "homepage": "https://github.com/Casimir-Kuzyk/prompt-tool#readme"
+}
