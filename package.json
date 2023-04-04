@@ -1,6 +1,6 @@
 {
   "name": "gpt-prompt-tool",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "create a txt file with all of the code in a folder for prompting chatgpt",
   "main": "gpt-prompt-tool.js",
   "scripts": {
