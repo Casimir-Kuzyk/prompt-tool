@@ -3,6 +3,7 @@
 const { Command } = require('commander');
 const fs = require('fs');
 const path = require('path');
+const clipboardy = require('clipboardy');
 
 const program = new Command();
 
@@ -12,6 +13,13 @@ program
     .action(combiner)
 
 function combiner(files){
+
+        // If no files are passed as arguments, get all files in current directory
+        if (!files || files.length === 0) {
+            const currentDir = process.cwd();
+            files = fs.readdirSync(currentDir);
+        }
+        
         // Combine text from input files
         const combinedText = files.reduce((acc, file) => {
             const filePath = path.resolve(process.cwd(), file);
@@ -25,7 +33,8 @@ function combiner(files){
             //const outputFilePath = path.resolve(process.cwd(), 'combined-files.txt');
             const outputFilePath = path.resolve(require('os').homedir(), 'Desktop', 'combined-files.txt');
             fs.writeFileSync(outputFilePath, combinedText);
-            console.log(`Successfully combined text from ${files.length} files into ${outputFilePath}`);
+            clipboardy.writeSync(combinedText)
+            console.log(`Successfully combined text from ${files.length} files into ${outputFilePath} and copied it to the clipboard`);
         };
 
 program.parse(process.argv);
