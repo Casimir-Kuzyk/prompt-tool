@@ -40,6 +40,7 @@ function combiner(files){
             child.stdin.end();
             child.on('exit', () => {
                 console.log(`Successfully combined text from ${files.length} files into ${outputFilePath} and copied it to the clipboard`);
+                process.exit();
             });
             
         };
