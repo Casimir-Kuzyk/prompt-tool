@@ -3,7 +3,7 @@
 const { Command } = require('commander');
 const fs = require('fs');
 const path = require('path');
-const clipboardy = require('clipboardy');
+const copyPaste = require('copy-paste');
 
 const program = new Command();
 
@@ -33,7 +33,7 @@ function combiner(files){
             //const outputFilePath = path.resolve(process.cwd(), 'combined-files.txt');
             const outputFilePath = path.resolve(require('os').homedir(), 'Desktop', 'combined-files.txt');
             fs.writeFileSync(outputFilePath, combinedText);
-            clipboardy.writeSync(combinedText)
+            copyPaste.copy(combinedText)
             console.log(`Successfully combined text from ${files.length} files into ${outputFilePath} and copied it to the clipboard`);
         };
 
