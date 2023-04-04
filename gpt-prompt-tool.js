@@ -8,7 +8,7 @@ const clipboardy = require('clipboardy');
 const program = new Command();
 
 program
-    .arguments('<files...>')
+    .arguments('[files...]')
     .description('takes all the requested files in the folder and compiles them into a file called compiled-files, and also copies to your clipboard')
     .action(combiner)
 
