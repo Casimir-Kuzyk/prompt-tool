@@ -3,7 +3,7 @@
 const { Command } = require('commander');
 const fs = require('fs');
 const path = require('path');
-const copyPaste = require('copy-paste');
+const { execSync } = require('child_process');
 
 const program = new Command();
 
@@ -33,10 +33,12 @@ function combiner(files){
             //const outputFilePath = path.resolve(process.cwd(), 'combined-files.txt');
             const outputFilePath = path.resolve(require('os').homedir(), 'Desktop', 'combined-files.txt');
             fs.writeFileSync(outputFilePath, combinedText);
-            copyPaste.copy(combinedText, () => {
-                console.log(`Successfully combined text from ${files.length} files into ${outputFilePath} and copied it to the clipboard`);
-            });
+            
+            //copy to clipboard... this is a linux only command! Future update could include commands for windows + macOS
+            execSync('echo "${combinedText}" | xclip -sel clip');
 
+            console.log(`Successfully combined text from ${files.length} files into ${outputFilePath} and copied it to the clipboard`);
+            
         };
 
 program.parse(process.argv);
