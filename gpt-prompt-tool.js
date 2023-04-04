@@ -35,7 +35,8 @@ function combiner(files){
             fs.writeFileSync(outputFilePath, combinedText);
             
             //copy to clipboard... this is a linux only command! Future update could include commands for windows + macOS
-            execSync(`echo "${combinedText}" | xclip -sel clip`);
+            execSync('xclip -sel clip', {input: combinedText});
+            //execSync(`echo "${combinedText}" | xclip -sel clip`);
 
             console.log(`Successfully combined text from ${files.length} files into ${outputFilePath} and copied it to the clipboard`);
             
